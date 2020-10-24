@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+import json
 
 app = FastAPI()
 
@@ -12,5 +13,5 @@ async def read_idtem(item_id):
         return{"message":"Welkom meneer Buitenhuis"}
     else:
         s = f'Hallo {item_id}'
-        return {f"message":s}
+        return json.dumps({f"message":s})
 
